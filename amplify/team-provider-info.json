@@ -1,0 +1,36 @@
+{
+  "amos": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-myonlinestore-amos-01514-authRole",
+      "UnauthRoleArn": "arn:aws:iam::891376953316:role/amplify-myonlinestore-amos-01514-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::891376953316:role/amplify-myonlinestore-amos-01514-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-myonlinestore-amos-01514-deployment",
+      "UnauthRoleName": "amplify-myonlinestore-amos-01514-unauthRole",
+      "StackName": "amplify-myonlinestore-amos-01514",
+      "StackId": "arn:aws:cloudformation:us-east-1:891376953316:stack/amplify-myonlinestore-amos-01514/95538280-311f-11ef-9c61-0affde745fe7",
+      "AmplifyAppId": "d3qokaqpijhqdi"
+    },
+    "categories": {
+      "auth": {
+        "myonlinestore5b43e8c5": {}
+      },
+      "function": {
+        "ProcessPayment": {
+          "deploymentBucketName": "amplify-myonlinestore-amos-01514-deployment",
+          "s3Key": "amplify-builds/ProcessPayment-527246422f466d477365-build.zip"
+        },
+        "CreateOrder": {
+          "deploymentBucketName": "amplify-myonlinestore-amos-01514-deployment",
+          "s3Key": "amplify-builds/CreateOrder-6f4d4d4f677844657a42-build.zip"
+        }
+      },
+      "storage": {
+        "GroceryImages": {}
+      },
+      "api": {
+        "myonlinestore": {}
+      }
+    }
+  }
+}

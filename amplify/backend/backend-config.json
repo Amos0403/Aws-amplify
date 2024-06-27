@@ -1,0 +1,89 @@
+{
+  "api": {
+    "myonlinestore": {
+      "output": {
+        "authConfig": {
+          "additionalAuthenticationProviders": [
+            {
+              "apiKeyConfig": {
+                "apiKeyExpirationDays": 365,
+                "description": "Guest user access to groceries"
+              },
+              "authenticationType": "API_KEY"
+            }
+          ],
+          "defaultAuthentication": {
+            "authenticationType": "AMAZON_COGNITO_USER_POOLS",
+            "userPoolConfig": {
+              "userPoolId": "authmyonlinestore5b43e8c5"
+            }
+          }
+        }
+      },
+      "providerPlugin": "awscloudformation",
+      "service": "AppSync"
+    }
+  },
+  "auth": {
+    "myonlinestore5b43e8c5": {
+      "customAuth": false,
+      "dependsOn": [],
+      "providerPlugin": "awscloudformation",
+      "service": "Cognito"
+    }
+  },
+  "function": {
+    "CreateOrder": {
+      "build": true,
+      "dependsOn": [],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "ProcessPayment": {
+      "build": true,
+      "dependsOn": [],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    }
+  },
+  "parameters": {
+    "AMPLIFY_function_CreateOrder_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "CreateOrder"
+        }
+      ]
+    },
+    "AMPLIFY_function_CreateOrder_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "CreateOrder"
+        }
+      ]
+    },
+    "AMPLIFY_function_ProcessPayment_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "ProcessPayment"
+        }
+      ]
+    },
+    "AMPLIFY_function_ProcessPayment_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "ProcessPayment"
+        }
+      ]
+    }
+  },
+  "storage": {
+    "GroceryImages": {
+      "providerPlugin": "awscloudformation",
+      "service": "S3"
+    }
+  }
+}
